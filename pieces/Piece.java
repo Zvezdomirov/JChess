@@ -21,4 +21,5 @@ public abstract class Piece {
         return piecePosition;
     };
     public abstract Set<Move> calculateLegalMoves(Board board);
+    public abstract String toString();
 }

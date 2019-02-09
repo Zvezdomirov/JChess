@@ -10,6 +10,8 @@ public class Board {
     public ChessTile getTile(int row, int col) {
         return board[row][col];
     }
+    //TODO: Look up the "builder" pattern
+
     //probably won't need it, because we will spawn the board with
     //the pieces on top
     /*private static void spawnEmptyBoard(ChessTile[][] board) {

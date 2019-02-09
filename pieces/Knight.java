@@ -9,19 +9,15 @@ import java.util.Set;
 
 public class Knight extends Piece {
 
-    private Alliance pieceAlliance;
-    private ChessTile piecePosition;
-
     public Knight(ChessTile piecePosition, Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
-
     @Override
     public Set<Move> calculateLegalMoves(Board board) {
 
-        int xCoord = piecePosition.getXCoord();
-        int yCoord = piecePosition.getYCoord();
+        int xCoord = this.getPiecePosition().getXCoord();
+        int yCoord = this.getPiecePosition().getYCoord();
 
         Set<Move> legalMoves = new HashSet<>();
 
@@ -69,16 +65,6 @@ public class Knight extends Piece {
             }
         }
         return legalMoves;
-    }
-
-    @Override
-    public Alliance getPieceAlliance() {
-        return pieceAlliance;
-    }
-
-    @Override
-    public ChessTile getPiecePosition() {
-        return piecePosition;
     }
 
     @Override
