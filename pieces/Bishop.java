@@ -10,8 +10,8 @@ import java.util.Set;
 
 public class Bishop extends Piece {
 
-    public Bishop(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Bishop(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
 

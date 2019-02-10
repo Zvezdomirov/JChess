@@ -13,8 +13,8 @@ public class Pawn extends Piece {
     private boolean hasMoved;
     private boolean isInTopBoardTeam;
 
-    public Pawn(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Pawn(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
     @Override

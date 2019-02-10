@@ -11,8 +11,8 @@ import java.util.Set;
 public class King extends Piece{
 
 
-    public King(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public King(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
 

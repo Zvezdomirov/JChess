@@ -9,8 +9,8 @@ import java.util.Set;
 
 public class Knight extends Piece {
 
-    public Knight(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Knight(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
     @Override

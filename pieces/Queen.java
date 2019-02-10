@@ -9,8 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Queen extends Piece {
-    public Queen(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Queen(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
 

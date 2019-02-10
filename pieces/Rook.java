@@ -10,8 +10,8 @@ import java.util.Set;
 
 public class Rook extends Piece {
 
-    public Rook(ChessTile piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Rook(Alliance pieceAlliance) {
+        super(pieceAlliance);
     }
 
     //The queen also uses this logic.

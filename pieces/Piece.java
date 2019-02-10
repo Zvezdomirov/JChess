@@ -9,11 +9,13 @@ public abstract class Piece {
     private Alliance pieceAlliance;
     private ChessTile piecePosition;
 
-    Piece (ChessTile piecePosition, Alliance pieceAlliance) {
-        this.piecePosition = piecePosition;
+    Piece (Alliance pieceAlliance) {
         this.pieceAlliance = pieceAlliance;
     }
 
+    public void setPiecePosition(ChessTile piecePosition) {
+        this.piecePosition = piecePosition;
+    }
     public Alliance getPieceAlliance() {
         return this.pieceAlliance;
     };
