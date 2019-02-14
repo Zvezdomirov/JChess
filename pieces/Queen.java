@@ -1,9 +1,6 @@
 package com.chess.engine.pieces;
 
-import com.chess.engine.board.Board;
-import com.chess.engine.board.ChessTile;
-import com.chess.engine.board.Constants;
-import com.chess.engine.board.Move;
+import com.chess.engine.board.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,13 +32,13 @@ public class Queen extends Piece {
             //If the current tile is empty, we can add a
             //regular move into the legalMoves set
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move());
+                legalMoves.add(new Move(MoveType.REGULAR));
 
                 //If the current tile has an opponent's piece
                 //on top, add an attacking move into the legalMoves set
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() != this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
 
                 //The only left case is that the piece on the current tile
                 //has an ally piece on top, therefore it is not a legal
@@ -59,10 +56,10 @@ public class Queen extends Piece {
              tempX--, tempY--) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -73,10 +70,10 @@ public class Queen extends Piece {
              tempX++, tempY--) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -87,10 +84,10 @@ public class Queen extends Piece {
              tempX++, tempY++) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -99,10 +96,10 @@ public class Queen extends Piece {
         for (tempX = xCoord, tempY = yCoord; tempX >= 0; tempX--) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); // regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); // regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() != this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -111,10 +108,10 @@ public class Queen extends Piece {
         for (tempX = xCoord, tempY = yCoord; tempX < Constants.ROW_SIZE; tempX++) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -123,10 +120,10 @@ public class Queen extends Piece {
         for (tempX = xCoord, tempY = yCoord; tempY >= 0; tempY--) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }
@@ -135,10 +132,10 @@ public class Queen extends Piece {
         for (tempX = xCoord, tempY = yCoord; tempY < Constants.COL_SIZE; tempY++) {
 
             if (board.getTile(tempX, tempY).isEmpty()) {
-                legalMoves.add(new Move()); //regular move
+                legalMoves.add(new Move(MoveType.REGULAR)); //regular move
             } else if (board.getTile(tempX, tempY).getPieceOnTop()
                     .getPieceAlliance() == this.getPieceAlliance()) {
-                legalMoves.add(new Move()); // attacking move
+                legalMoves.add(new Move(MoveType.ATTACKING)); // attacking move
             } else {
                 break;
             }

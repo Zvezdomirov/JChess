@@ -1,9 +1,7 @@
 package com.chess.engine.pieces;
 
-import com.chess.engine.board.Move;
-import com.chess.engine.board.Board;
-import com.chess.engine.board.ChessTile;
-import com.chess.engine.board.Constants;
+import com.chess.engine.board.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,42 +22,42 @@ public class Knight extends Piece {
         if (xCoord - 1 >= 0) {
             if (yCoord - 2 >= 0) {
                 if (board.getTile(xCoord - 1, yCoord - 2).isEmpty()) {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new Move(MoveType.REGULAR));
                 } else {
                     if (board.getTile(xCoord - 1, yCoord - 2)
                             .getPieceOnTop().getPieceAlliance() != this.getPieceAlliance()) {
-                        legalMoves.add(new Move()); //but an attacking one
+                        legalMoves.add(new Move(MoveType.ATTACKING)); //but an attacking one
                     }
                 }
 
             } else if (yCoord + 2 < Constants.ROW_SIZE) {
                 if (board.getTile(xCoord - 1, yCoord + 2).isEmpty()) {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new Move(MoveType.REGULAR));
                 } else {
                     if (board.getTile(xCoord - 1, yCoord + 2)
                             .getPieceOnTop().getPieceAlliance() != this.getPieceAlliance()) {
-                        legalMoves.add(new Move()); //but an attacking one
+                        legalMoves.add(new Move(MoveType.ATTACKING)); //but an attacking one
                     }
                 }
             }
         } else if (xCoord + 1 < Constants.COL_SIZE) {
             if (yCoord - 2 >= 0) {
                 if (board.getTile(xCoord + 1, yCoord - 2).isEmpty()) {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new Move(MoveType.REGULAR));
                 } else {
                     if (board.getTile(xCoord + 1, yCoord - 2)
                             .getPieceOnTop().getPieceAlliance() != this.getPieceAlliance()) {
-                        legalMoves.add(new Move()); //but an attacking one
+                        legalMoves.add(new Move(MoveType.ATTACKING)); //but an attacking one
                     }
                 }
 
             } else if (yCoord + 2 < Constants.ROW_SIZE) {
                 if (board.getTile(xCoord - 1, yCoord - 2).isEmpty()) {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new Move(MoveType.REGULAR));
                 } else {
                     if (board.getTile(xCoord - 1, yCoord - 2)
                             .getPieceOnTop().getPieceAlliance() != this.getPieceAlliance()) {
-                        legalMoves.add(new Move()); //but an attacking one
+                        legalMoves.add(new Move(MoveType.ATTACKING)); //but an attacking one
                     }
                 }
             }
